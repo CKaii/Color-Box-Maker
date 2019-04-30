@@ -13,6 +13,12 @@ class BoxList extends Component {
     })
   }
 
+  remove = (id) => {
+    this.setState({
+      boxes: this.state.boxes.filter(box => box.id !== id)
+    })
+  }
+
   render(){
   const boxes = this.state.boxes.map(box => (
     <Box
@@ -21,6 +27,7 @@ class BoxList extends Component {
       width={box.width}
       height={box.height}
       color={box.color}
+      removeBox={this.remove}
     />
   ));
 

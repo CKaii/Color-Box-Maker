@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 
 class Box extends Component {
+  handleRemove = () => {
+    this.props.removeBox(this.props.id)
+  }
+
   render() {
     return(
       <div>
@@ -9,7 +13,7 @@ class Box extends Component {
           width: `${this.props.width}em`,
           height: `${this.props.height}em`
         }}/>
-        <button>X</button>
+        <button onClick={this.handleRemove}>X</button>
       </div>
     )
   }
