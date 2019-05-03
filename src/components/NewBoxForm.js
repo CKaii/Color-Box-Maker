@@ -14,11 +14,12 @@ class NewBoxForm extends Component {
     })
   }
 
+  //takes data from <form> and passes it to boxlist while calling a method that addes it to the state in BoxList.js
   handleSubmit = (e) => {
-    e.preventDefault();
-    const newBox = {...this.state, id: uuid()}
-    this.props.createBox(newBox);
-    this.setState({
+    e.preventDefault(); //prevents the page from refreshing/rerendering
+    const newBox = {...this.state, id: uuid()} //adds an id to the current state of newBox
+    this.props.createBox(newBox); //prop passed down from BoxList
+    this.setState({ //resets the form to a blank state
       height: "",
       width: "",
       color: ""

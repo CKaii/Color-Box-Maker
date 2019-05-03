@@ -8,12 +8,12 @@ class Box extends Component {
   render() {
     return(
       <div>
-        <div style={{
-          backgroundColor: this.props.color,
-          width: `${this.props.width}em`,
-          height: `${this.props.height}em`
+        <div style={{ //this creates the inline css style
+          backgroundColor: this.props.color, //this
+          width: `${this.props.width}em`, //this allows the user to type in their own dimensions for width
+          height: `${this.props.height}em` //this allows the user to type in their own dimensions for height
         }}/>
-        <button onClick={this.handleRemove}>X</button>
+        <button onClick={this.handleRemove}>X</button> //removes the box through the handleRemove handler
       </div>
     )
   }
